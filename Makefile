@@ -21,3 +21,4 @@ $(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
 
 clean:
 	rm -r $(BUILDDIR)
+	rm $(TARGET)
