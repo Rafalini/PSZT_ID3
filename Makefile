@@ -9,6 +9,9 @@ CFLAGS = -std=c++11 -g -Wall
 SOURCES = $(shell find $(SRCDIR) -type f -name *.cpp)
 OBJECTS = $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.cpp=.o))
 
+run: $(TARGET)
+	./$(TARGET)
+
 $(TARGET): $(OBJECTS)
 		$(CC) $^ -o $(TARGET)
 
