@@ -9,9 +9,6 @@ CFLAGS = -std=c++11 -g -Wall
 SOURCES = $(shell find $(SRCDIR) -type f -name *.cpp)
 OBJECTS = $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.cpp=.o))
 
-run: $(TARGET)
-	./$(TARGET)
-
 $(TARGET): $(OBJECTS)
 		$(CC) $^ -o $(TARGET)
 
@@ -22,3 +19,6 @@ $(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
 clean:
 	rm -r $(BUILDDIR)
 	rm $(TARGET)
+
+run: $(TARGET)
+	./$(TARGET)

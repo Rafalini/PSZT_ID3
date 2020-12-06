@@ -3,12 +3,13 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <utility>
 
 #include "Node.hpp"
 
 using namespace std;
 
-vector<vector<int>> read_data_file(vector<string> &classes, string input)
+vector<vector<int>> read_data_file(map<int,string> &classes, string input)
 {
     fstream f; f.open(input, ios::in);
 
@@ -16,9 +17,11 @@ vector<vector<int>> read_data_file(vector<string> &classes, string input)
 
     stringstream class_stream(line);
 
+    int i=0;
     while(getline(class_stream, line, ';'))   //get class names
-        classes.push_back(line);
-    classes.pop_back();                 //last string is 'Class', remove it
+      if(line != "Class")
+        classes.insert(pair<int,string>(i++,line));
+    classes.erase(54);                  //last string is 'Class', remove it
 
     vector<vector<int>> cases;          //vector for case vectors
 
@@ -37,11 +40,12 @@ vector<vector<int>> read_data_file(vector<string> &classes, string input)
 
 int main()
 {
-    vector<int> classes = {0,1};
-    vector<string> atributes;
+    //vector<int> classes = {0,1};
+    map<int,string> atributes;
     vector<vector<int>> data = read_data_file(atributes, "divorce.csv");
 
-    Node root(classes, atributes, data);
+    Node root(atributes, data);
+    root.print(0);
 
     return 0;
 }
