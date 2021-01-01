@@ -15,7 +15,6 @@ class Node{
   double entropy_for_division(int atribute, std::vector<std::vector<int>> learning_data);
   double inf_gain(int atribute, std::vector<std::vector<int>> learning_data);
 
-
   int how_many_classes_in_data_set(std::vector<std::vector<int>> learning_data); //counts different values on last position of 'case' vectors
   int most_oftem_occurring_class(std::vector<std::vector<int>> learning_data);   //returns value of most occuring class value
   //returns atribute which should be chosen to node in order to achieve max information gain

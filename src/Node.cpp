@@ -58,7 +58,7 @@ double Node::entropy_for_division(int atribute, std::vector<std::vector<int>> le
   double entropy=0;
 
   for(auto single_set : sets_divided)
-      entropy += calculate_entropy(single_set.second); // zapomniałeś chyba domnożyć przez |Uj|/|U| czyli * single_set.size() / learning_data.size()
+      entropy += (double)single_set.second.size() / (double) learning_data.size() * calculate_entropy(single_set.second);
   return entropy;
 }
 
@@ -107,7 +107,7 @@ std::pair<int,std::string> Node::atribute_with_max_entropy(std::map<int,std::str
   double max_entropy_gain = 0.0;
   std::pair<int,std::string> max_atribute = std::pair<int,std::string>(atributes.begin()->first, atributes.begin()->second);
   for(auto atribute : atributes){
-      int information_gain_from_division = inf_gain(atribute.first, learning_data); // tu powinien być double, a nie int
+      double information_gain_from_division = inf_gain(atribute.first, learning_data);
       if(information_gain_from_division>max_entropy_gain)
       {
           max_entropy_gain = information_gain_from_division;
