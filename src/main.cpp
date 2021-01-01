@@ -18,10 +18,11 @@ vector<vector<int>> read_data_file(map<int,string> &classes, string input)
     stringstream class_stream(line);
 
     int i=0;
-    while(getline(class_stream, line, ';'))   //get class names
-      if(line != "Class")
+    while(getline(class_stream, line, ';')) {  //get class names
         classes.insert(pair<int,string>(i++,line));
-    classes.erase(54);                  //last string is 'Class', remove it
+    }
+
+    classes.erase(--classes.end());     //last string is 'Class', remove it
 
     vector<vector<int>> cases;          //vector for case vectors
 
@@ -40,7 +41,6 @@ vector<vector<int>> read_data_file(map<int,string> &classes, string input)
 
 int main()
 {
-    //vector<int> classes = {0,1};
     map<int,string> atributes;
     vector<vector<int>> data = read_data_file(atributes, "divorce.csv");
 

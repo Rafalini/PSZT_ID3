@@ -7,13 +7,11 @@
 #include <map>
 
 class Node{
-
-  bool is_leave;
-  int return_class;                    //only if IS a leave
-  std::pair<int,std::string> atribute; //only if IS NOT leave
+  int return_class;                    //only if IS a leaf
+  std::pair<int,std::string> atribute; //only if IS NOT leaf
   std::map<int,Node> children;
 
-  double set_entropy(std::vector<std::vector<int>> learning_data);
+  double calculate_entropy(std::vector<std::vector<int>> learning_data);
   double entropy_for_division(int atribute, std::vector<std::vector<int>> learning_data);
   double inf_gain(int atribute, std::vector<std::vector<int>> learning_data);
 
@@ -25,7 +23,6 @@ class Node{
   std::map<int,std::vector<std::vector<int>>> sets_divided_by_atribute(int atribute, std::vector<std::vector<int>> learning_data);
 
 public:
-  Node();
   Node(std::map<int,std::string> atributes, std::vector<std::vector<int>> learning_data);
   void print(int level);
   int predict(std::vector<int> input_case);
