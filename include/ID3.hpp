@@ -9,21 +9,21 @@
 
 class ID3{
 private:
-  std::shared_ptr<Node> build_ID3(std::set<int> attributes, std::vector<std::vector<int>> learning_data);
+  std::shared_ptr<Node> build_ID3(std::set<int> &attributes, std::vector<std::vector<int>> &learning_data);
 
-  double calculate_entropy(std::vector<std::vector<int>> learning_data);
-  double entropy_for_division(int atribute, std::vector<std::vector<int>> learning_data);
-  double inf_gain(int atribute, std::vector<std::vector<int>> learning_data);
+  static double calculate_entropy(std::vector<std::vector<int>> &learning_data);
+  static double entropy_for_division(int attribute, std::vector<std::vector<int>> &learning_data);
+  static double inf_gain(int attribute, std::vector<std::vector<int>> &learning_data);
 
-  bool is_one_class_in_data_set(std::vector<std::vector<int>> learning_data);
-  int most_oftem_occurring_class(std::vector<std::vector<int>> learning_data);
-  int atribute_with_max_entropy(std::set<int> atributes, std::vector<std::vector<int>> learning_data);
-  std::map<int,std::vector<std::vector<int>>> sets_divided_by_atribute(int atribute, std::vector<std::vector<int>> learning_data);
+  static bool is_one_class_in_data_set(std::vector<std::vector<int>> &learning_data);
+  static int most_often_occurring_class(std::vector<std::vector<int>> &learning_data);
+  static int attribute_with_max_entropy(std::set<int> &attributes, std::vector<std::vector<int>> &learning_data);
+  static std::map<int,std::vector<std::vector<int>>> sets_divided_by_attribute(int attribute, std::vector<std::vector<int>> &learning_data);
 
 public:
   std::shared_ptr<Node> root;
-  ID3(std::set<int> attributes, std::vector<std::vector<int>> learning_data);
-  int predict(std::vector<int> input_case);
+  ID3(std::set<int> &attributes, std::vector<std::vector<int>> &learning_data);
+  int predict(std::vector<int> input_case) const;
   void print();
 };
 
