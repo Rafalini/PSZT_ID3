@@ -10,11 +10,14 @@
 #include <cmath>
 #include <iostream>
 
+const int MIN_ATTRIBUTE_VALUE = 0;
+const int MAX_ATTRIBUTE_VALUE = 4;
+
 ID3::ID3(std::set<int> &attributes, std::vector<std::vector<int>> &learning_data){
   root = build_ID3(attributes, learning_data);
 }
 
-std::shared_ptr<Node> ID3::build_ID3(std::set<int> &attributes, std::vector<std::vector<int>> &learning_data) {
+std::shared_ptr<Node> ID3::build_ID3(std::set<int> attributes, std::vector<std::vector<int>> learning_data) {
   //ID3 algorithm
   //if only one class occurs in learning data return that class
   if(is_one_class_in_data_set(learning_data)){
@@ -22,7 +25,7 @@ std::shared_ptr<Node> ID3::build_ID3(std::set<int> &attributes, std::vector<std:
     return std::make_shared<Node>(return_class, -1);
   }
 
-  //if attributes.size() == 0 return most oftem class
+  //if attributes.empty() return most often class
   if(attributes.empty()) {
     int return_class = most_often_occurring_class(learning_data);
     return std::make_shared<Node>(return_class, -1);
@@ -37,9 +40,15 @@ std::shared_ptr<Node> ID3::build_ID3(std::set<int> &attributes, std::vector<std:
 
   // call recursively for sets divided by attribute
   std::shared_ptr<Node> currRoot(new Node(-1, division_attribute));
-  for (auto data_subset : sets_divided) {
-    std::shared_ptr<Node> child = build_ID3(attributes, data_subset.second);
-    currRoot->children[data_subset.first] = child;
+  for (int attribValue = MIN_ATTRIBUTE_VALUE; attribValue <= MAX_ATTRIBUTE_VALUE; attribValue++) {
+    auto subset = sets_divided[attribValue];
+    if (!subset.empty()) {
+        currRoot->children[attribValue] = build_ID3(attributes, subset);
+    }
+    else {
+        int most_occurring_class = most_often_occurring_class(learning_data);
+        currRoot->children[attribValue] = std::make_shared<Node>(most_occurring_class, -1);
+    }
   }
 
   return currRoot;
@@ -127,7 +136,7 @@ int ID3::attribute_with_max_entropy(std::set<int> &attributes, std::vector<std::
   return max_attribute;
 }
 
-void ID3::print(){
+void ID3::print() const{
   std::vector<std::tuple<int, int, int, std::shared_ptr<Node>>> nodes = {{0, -1, -1, root}}; // {tree height, attributeName, attributeValue, node}
   int currLevel = 0;
 
@@ -156,6 +165,8 @@ void ID3::print(){
     for (const auto &child : currNode->children)
         nodes.emplace_back(height + 1, currNode->attribute, child.first, child.second);
   }
+
+  std::cout << std::endl << std::endl;
 }
 
 int ID3::predict(std::vector<int> input_case) const{

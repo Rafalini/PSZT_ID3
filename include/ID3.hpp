@@ -9,7 +9,7 @@
 
 class ID3{
 private:
-  std::shared_ptr<Node> build_ID3(std::set<int> &attributes, std::vector<std::vector<int>> &learning_data);
+  std::shared_ptr<Node> build_ID3(std::set<int> attributes, std::vector<std::vector<int>> learning_data);
 
   static double calculate_entropy(std::vector<std::vector<int>> &learning_data);
   static double entropy_for_division(int attribute, std::vector<std::vector<int>> &learning_data);
@@ -24,6 +24,6 @@ public:
   std::shared_ptr<Node> root;
   ID3(std::set<int> &attributes, std::vector<std::vector<int>> &learning_data);
   int predict(std::vector<int> input_case) const;
-  void print();
+  void print() const;
 };
 
