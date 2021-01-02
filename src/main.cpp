@@ -42,11 +42,11 @@ int main()
     set<int> attributes;
     vector<vector<int>> data = read_data_file(attributes, "divorce.csv");
 
-    cout << "Mean accuracy: " << mean_accuracy(10, attributes, data) << " %" << endl << endl;
+    mean_stats(10, attributes, data);
 
-    // exemplary decision tree
-    ID3 id3(attributes, data);
-    id3.print();
+//    exemplary decision tree
+//    ID3 id3(attributes, data);
+//    id3.print();
 
     return 0;
 }
