@@ -4,13 +4,13 @@
 #include <sstream>
 #include <string>
 #include <set>
-#include <cassert>
 
 #include "ID3.hpp"
+#include "Tests.hpp"
 
 using namespace std;
 
-vector<vector<int>> read_data_file(set<int> &classes, string input)
+vector<vector<int>> read_data_file(set<int> &classes, const string& input)
 {
     fstream f; f.open(input, ios::in);
 
@@ -37,26 +37,16 @@ vector<vector<int>> read_data_file(set<int> &classes, string input)
     return cases;
 }
 
-double test(vector<vector<int>> &data, ID3 &id3) {
-    int valid_predictions = 0;
-    for (auto test_case : data) {
-        if(id3.predict(test_case) == test_case.back())
-            valid_predictions++;
-    }
-
-    return (double)valid_predictions/(double)data.size() * 100.0;
-}
-
 int main()
 {
-    set<int> atributes;
-    vector<vector<int>> data = read_data_file(atributes, "divorce.csv");
+    set<int> attributes;
+    vector<vector<int>> data = read_data_file(attributes, "divorce.csv");
 
-    ID3 id3(atributes, data);
+    mean_stats(10, attributes, data);
 
-    cout << "correct predictions percentage: " << test(data, id3) << " %" << endl << endl;
-
-    id3.print();
+//    exemplary decision tree
+//    ID3 id3(attributes, data);
+//    id3.print();
 
     return 0;
 }

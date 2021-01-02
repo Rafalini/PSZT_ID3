@@ -4,7 +4,7 @@
 #include <memory>
 
 struct Node {
-  int return_class; // valid only for leafs
+  int return_class; // valid only for leaves
   int attribute;
   std::map<int, std::shared_ptr<Node>> children;
 
