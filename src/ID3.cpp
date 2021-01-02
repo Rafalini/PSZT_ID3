@@ -3,12 +3,10 @@
 
 #include <vector>
 #include <string>
-#include <algorithm>
-#include <utility>
+#include <memory>
 #include <map>
 #include <tuple>
 #include <set>
-#include <unordered_set>
 #include <math.h>
 #include <iostream>
 
@@ -16,18 +14,18 @@ ID3::ID3(std::set<int> attributes, std::vector<std::vector<int>> learning_data){
   root = build_ID3(attributes, learning_data);
 }
 
-Node* ID3::build_ID3(std::set<int> attributes, std::vector<std::vector<int>> learning_data) {
+std::shared_ptr<Node> ID3::build_ID3(std::set<int> attributes, std::vector<std::vector<int>> learning_data) {
   //ID3 algorithm
   //if only one class occurs in learning data return that class
   if(is_one_class_in_data_set(learning_data)){
     int return_class = learning_data[0].back();
-    return new Node(return_class, -1);
+    return std::shared_ptr<Node>(new Node(return_class, -1));
   }
 
   //if atributes.size() == 0 return most oftem class
   if(attributes.size() == 0) {
     int return_class = most_oftem_occurring_class(learning_data);
-    return new Node(return_class, -1);
+    return std::shared_ptr<Node>(new Node(return_class, -1));
   }
 
   //select best atribute
@@ -37,9 +35,9 @@ Node* ID3::build_ID3(std::set<int> attributes, std::vector<std::vector<int>> lea
   std::map<int,std::vector<std::vector<int>>> sets_divided = sets_divided_by_atribute(division_attribute, learning_data);
 
   // call recursively for sets divided by attribute
-  Node *root = new Node(-1, division_attribute);
+  std::shared_ptr<Node> root(new Node(-1, division_attribute));
   for (auto data_subset : sets_divided) {
-    Node *child = build_ID3(attributes, data_subset.second);
+    std::shared_ptr<Node> child = build_ID3(attributes, data_subset.second);
     root->children[data_subset.first] = child;
   }
 
@@ -89,7 +87,7 @@ double ID3::inf_gain(int atribute, std::vector<std::vector<int>> learning_data){
 }
 
 bool ID3::is_one_class_in_data_set(std::vector<std::vector<int>> learning_data){
-  std::unordered_set<int> classes; //classes that occur in learning data
+  std::set<int> classes; //classes that occur in learning data
 
   for(auto single_case : learning_data) {
     int curr_class = single_case.back();
@@ -129,7 +127,7 @@ int ID3::atribute_with_max_entropy(std::set<int> atributes, std::vector<std::vec
 }
 
 void ID3::print(){
-  std::vector<std::tuple<int, int, int, Node*>> nodes = {{0, -1, -1, root}}; // {tree height, attributeName, attributeValue, node}
+  std::vector<std::tuple<int, int, int, std::shared_ptr<Node>>> nodes = {{0, -1, -1, root}}; // {tree height, attributeName, attributeValue, node}
   int currLevel = 0;
 
   std::cout << "root";
@@ -137,7 +135,7 @@ void ID3::print(){
     int height = std::get<0>(nodes[i]);
     int attribName = std::get<1>(nodes[i]);
     int attribValue = std::get<2>(nodes[i]);
-    Node *currNode = std::get<3>(nodes[i]);
+    std::shared_ptr<Node> currNode = std::get<3>(nodes[i]);
 
     if (height != currLevel) {
         currLevel++;
@@ -160,7 +158,7 @@ void ID3::print(){
 }
 
 int ID3::predict(std::vector<int> input_case){
-  Node *currNode = root;
+  std::shared_ptr<Node> currNode = root;
   while (currNode->return_class == -1) {
       int attrValue = input_case[currNode->attribute];
       currNode = currNode->children[attrValue];

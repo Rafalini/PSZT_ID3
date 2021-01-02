@@ -4,7 +4,6 @@
 #include <sstream>
 #include <string>
 #include <set>
-#include <utility>
 #include <cassert>
 
 #include "ID3.hpp"
