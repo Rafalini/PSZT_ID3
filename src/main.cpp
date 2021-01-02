@@ -3,13 +3,15 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <set>
 #include <utility>
+#include <cassert>
 
-#include "Node.hpp"
+#include "ID3.hpp"
 
 using namespace std;
 
-vector<vector<int>> read_data_file(map<int,string> &classes, string input)
+vector<vector<int>> read_data_file(set<int> &classes, string input)
 {
     fstream f; f.open(input, ios::in);
 
@@ -17,11 +19,9 @@ vector<vector<int>> read_data_file(map<int,string> &classes, string input)
 
     stringstream class_stream(line);
 
-    int i=0;
-    while(getline(class_stream, line, ';')) {  //get class names
-        classes.insert(pair<int,string>(i++,line));
+    for(int i = 0; getline(class_stream, line, ';'); i++) {  //get classes
+        classes.insert(i);
     }
-
     classes.erase(--classes.end());     //last string is 'Class', remove it
 
     vector<vector<int>> cases;          //vector for case vectors
@@ -38,14 +38,26 @@ vector<vector<int>> read_data_file(map<int,string> &classes, string input)
     return cases;
 }
 
+double test(vector<vector<int>> &data, ID3 &id3) {
+    int valid_predictions = 0;
+    for (auto test_case : data) {
+        if(id3.predict(test_case) == test_case.back())
+            valid_predictions++;
+    }
+
+    return (double)valid_predictions/(double)data.size() * 100.0;
+}
 
 int main()
 {
-    map<int,string> atributes;
+    set<int> atributes;
     vector<vector<int>> data = read_data_file(atributes, "divorce.csv");
 
-    Node root(atributes, data);
-    root.print(0);
+    ID3 id3(atributes, data);
+
+    cout << "correct predictions percentage: " << test(data, id3) << " %" << endl << endl;
+
+    id3.print();
 
     return 0;
 }
