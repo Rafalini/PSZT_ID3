@@ -10,9 +10,6 @@
 #include <cmath>
 #include <iostream>
 
-const int MIN_ATTRIBUTE_VALUE = 0;
-const int MAX_ATTRIBUTE_VALUE = 4;
-
 ID3::ID3(std::set<int> &attributes, std::vector<std::vector<int>> &learning_data){
   root = build_ID3(attributes, learning_data);
 }
@@ -35,8 +32,7 @@ std::shared_ptr<Node> ID3::build_ID3(std::set<int> attributes, std::vector<std::
   int division_attribute = attribute_with_max_entropy(attributes, learning_data);
   attributes.erase(division_attribute);
 
-  std::map<int,std::vector<std::vector<int>>> sets_divided = sets_divided_by_attribute(division_attribute,
-                                                                                       learning_data);
+  std::map<int,std::vector<std::vector<int>>> sets_divided = sets_divided_by_attribute(division_attribute, learning_data);
 
   // call recursively for sets divided by attribute
   std::shared_ptr<Node> currRoot(new Node(-1, division_attribute));
@@ -143,7 +139,7 @@ void ID3::print() const{
   std::cout << "root";
   for(size_t i = 0; i < nodes.size(); i++) {
     int height = std::get<0>(nodes[i]);
-    int attribName = std::get<1>(nodes[i]);
+    int attribName = std::get<1>(nodes[i]) + 1;
     int attribValue = std::get<2>(nodes[i]);
     std::shared_ptr<Node> currNode = std::get<3>(nodes[i]);
 
@@ -152,7 +148,7 @@ void ID3::print() const{
         std::cout << std::endl << std::endl;
     }
 
-    if (attribName != -1) {
+    if (attribName != 0) {
         std::cout  << "Atr" + std::to_string(attribName) << ": " << attribValue << " ";
     }
 

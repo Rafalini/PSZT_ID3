@@ -42,11 +42,8 @@ int main()
     set<int> attributes;
     vector<vector<int>> data = read_data_file(attributes, "divorce.csv");
 
-    mean_stats(10, attributes, data);
-
-//    exemplary decision tree
-//    ID3 id3(attributes, data);
-//    id3.print();
+    calculateAttributesEntropy((unsigned int)6, attributes, data);
+    mean_stats(100, attributes, data);
 
     return 0;
 }

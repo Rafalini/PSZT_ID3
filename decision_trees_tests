@@ -1,0 +1,708 @@
+run #0
+True Positive: 13
+True Negative: 20
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #1
+True Positive: 16
+True Negative: 17
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #2
+True Positive: 15
+True Negative: 19
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #3
+True Positive: 17
+True Negative: 17
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #4
+True Positive: 20
+True Negative: 14
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #5
+True Positive: 18
+True Negative: 16
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #6
+True Positive: 17
+True Negative: 14
+False Positive: 1
+False Negative: 2
+Accuracy: 91.1765%
+
+run #7
+True Positive: 13
+True Negative: 19
+False Positive: 1
+False Negative: 1
+Accuracy: 94.1176%
+
+run #8
+True Positive: 17
+True Negative: 17
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #9
+True Positive: 13
+True Negative: 21
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #10
+True Positive: 17
+True Negative: 16
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #11
+True Positive: 15
+True Negative: 19
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #12
+True Positive: 17
+True Negative: 17
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #13
+True Positive: 17
+True Negative: 17
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #14
+True Positive: 11
+True Negative: 22
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #15
+True Positive: 13
+True Negative: 20
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #16
+True Positive: 17
+True Negative: 17
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #17
+True Positive: 17
+True Negative: 15
+False Positive: 1
+False Negative: 1
+Accuracy: 94.1176%
+
+run #18
+True Positive: 16
+True Negative: 17
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #19
+True Positive: 19
+True Negative: 12
+False Positive: 2
+False Negative: 1
+Accuracy: 91.1765%
+
+run #20
+True Positive: 19
+True Negative: 13
+False Positive: 0
+False Negative: 2
+Accuracy: 94.1176%
+
+run #21
+True Positive: 18
+True Negative: 13
+False Positive: 2
+False Negative: 1
+Accuracy: 91.1765%
+
+run #22
+True Positive: 16
+True Negative: 15
+False Positive: 1
+False Negative: 2
+Accuracy: 91.1765%
+
+run #23
+True Positive: 14
+True Negative: 19
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #24
+True Positive: 17
+True Negative: 17
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #25
+True Positive: 13
+True Negative: 19
+False Positive: 0
+False Negative: 2
+Accuracy: 94.1176%
+
+run #26
+True Positive: 16
+True Negative: 15
+False Positive: 1
+False Negative: 2
+Accuracy: 91.1765%
+
+run #27
+True Positive: 20
+True Negative: 14
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #28
+True Positive: 18
+True Negative: 15
+False Positive: 1
+False Negative: 0
+Accuracy: 97.0588%
+
+run #29
+True Positive: 15
+True Negative: 18
+False Positive: 1
+False Negative: 0
+Accuracy: 97.0588%
+
+run #30
+True Positive: 20
+True Negative: 12
+False Positive: 1
+False Negative: 1
+Accuracy: 94.1176%
+
+run #31
+True Positive: 14
+True Negative: 17
+False Positive: 0
+False Negative: 3
+Accuracy: 91.1765%
+
+run #32
+True Positive: 15
+True Negative: 18
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #33
+True Positive: 17
+True Negative: 16
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #34
+True Positive: 18
+True Negative: 15
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #35
+True Positive: 13
+True Negative: 19
+False Positive: 0
+False Negative: 2
+Accuracy: 94.1176%
+
+run #36
+True Positive: 19
+True Negative: 14
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #37
+True Positive: 11
+True Negative: 23
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #38
+True Positive: 14
+True Negative: 19
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #39
+True Positive: 11
+True Negative: 23
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #40
+True Positive: 12
+True Negative: 21
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #41
+True Positive: 20
+True Negative: 14
+False Posiive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #42
+True Positive: 16
+True Negative: 17
+False Positive: 1
+False Negative: 0
+Accuracy: 97.0588%
+
+run #43
+True Positive: 14
+True Negative: 19
+False Positive: 1
+False Negative: 0
+Accuracy: 97.0588%
+
+run #44
+True Positive: 17
+True Negative: 14
+False Positive: 1
+False Negative: 2
+Accuracy: 91.1765%
+
+run #45
+True Positive: 18
+True Negative: 13
+False Positive: 2
+False Negative: 1
+Accuracy: 91.1765%
+
+run #46
+True Positive: 18
+True Negative: 16
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #47
+True Positive: 14
+True Negative: 20
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #48
+True Positive: 14
+True Negative: 20
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #49
+True Positive: 15
+True Negative: 19
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #50
+True Positive: 16
+True Negative: 15
+False Positive: 2
+False Negative: 1
+Accuracy: 91.1765%
+
+run #51
+True Positive: 14
+True Negative: 20
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #52
+True Positive: 14
+True Negative: 17
+False Positive: 2
+False Negative: 1
+Accuracy: 91.1765%
+
+run #53
+True Positive: 18
+True Negative: 13
+False Positive: 2
+False Negative: 1
+Accuracy: 91.1765%
+
+run #54
+True Positive: 16
+True Negative: 17
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #55
+True Positive: 14
+True Negative: 19
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #56
+True Positive: 17
+True Negative: 16
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #57
+True Positive: 17
+True Negative: 14
+False Positive: 1
+False Negative: 2
+Accuracy: 91.1765%
+
+run #58
+True Positive: 15
+True Negative: 18
+False Positive: 1
+False Negative: 0
+Accuracy: 97.0588%
+
+run #59
+True Positive: 19
+True Negative: 14
+False Positive: 1
+False Negative: 0
+Accuracy: 97.0588%
+
+run #60
+True Positive: 19
+True Negative: 13
+False Positive: 0
+False Negative: 2
+Accuracy: 94.1176%
+
+run #61
+True Positive: 14
+True Negative: 18
+False Positive: 0
+False Negative: 2
+Accuracy: 94.1176%
+
+run #62
+True Positive: 13
+True Negative: 18
+False Positive: 2
+False Negative: 1
+Accuracy: 91.1765%
+
+run #63
+True Positive: 15
+True Negative: 17
+False Positive: 0
+False Negative: 2
+Accuracy: 94.1176%
+
+run #64
+True Positive: 20
+True Negative: 14
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #65
+True Positive: 17
+True Negative: 17
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #66
+True Positive: 15
+True Negative: 18
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #67
+True Positive: 14
+True Negative: 19
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #68
+True Positive: 15
+True Negative: 18
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #69
+True Positive: 15
+True Negative: 16
+False Positive: 0
+False Negative: 3
+Accuracy: 91.1765%
+
+run #70
+True Positive: 16
+True Negative: 16
+False Positive: 1
+False Negative: 1
+Accuracy: 94.1176%
+
+run #71
+True Positive: 16
+True Negative: 18
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #72
+True Positive: 20
+True Negative: 13
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #73
+True Positive: 16
+True Negative: 17
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #74
+True Positive: 17
+True Negative: 17
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #75
+True Positive: 16
+True Negative: 16
+False Positive: 1
+False Negative: 1
+Accuracy: 94.1176%
+
+run #76
+True Positive: 20
+True Negative: 13
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #77
+True Positive: 15
+True Negative: 18
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #78
+True Positive: 17
+True Negative: 17
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #79
+True Positive: 16
+True Negative: 18
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #80
+True Positive: 17
+True Negative: 14
+False Positive: 1
+False Negative: 2
+Accuracy: 91.1765%
+
+run #81
+True Positive: 19
+True Negative: 14
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #82
+True Positive: 19
+True Negative: 12
+False Positive: 2
+False Negative: 1
+Accuracy: 91.1765%
+
+run #83
+True Positive: 14
+True Negative: 18
+False Positive: 1
+False Negative: 1
+Accuracy: 94.1176%
+
+run #84
+True Positive: 14
+True Negative: 18
+False Positive: 1
+False Negative: 1
+Accuracy: 94.1176%
+
+run #85
+True Positive: 14
+True Negative: 19
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #86
+True Positive: 12
+True Negative: 22
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #87
+True Positive: 12
+True Negative: 20
+False Positive: 0
+False Negative: 2
+Accuracy: 94.1176%
+
+run #88
+True Positive: 17
+True Negative: 17
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #89
+True Positive: 17
+True Negative: 16
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #90
+True Positive: 15
+True Negative: 18
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+run #91
+True Positive: 19
+True Negative: 15
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #92
+True Positive: 18
+True Negative: 16
+False Positive: 0
+False Negative: 0
+Accuracy: 100%
+
+run #93
+True Positive: 16
+True Negative: 16
+False Positive: 1
+False Negative: 1
+Accuracy: 94.1176%
+
+run #94
+True Positive: 18
+True Negative: 12
+False Positive: 1
+False Negative: 3
+Accuracy: 88.2353%
+
+run #95
+True Positive: 12
+True Negative: 20
+False Positive: 0
+False Negative: 2
+Accuracy: 94.1176%
+
+run #96
+True Positive: 14
+True Negative: 18
+False Positive: 0
+False Negative: 2
+Accuracy: 94.1176%
+
+run #97
+True Positive: 14
+True Negative: 16
+False Positive: 1
+False Negative: 3
+Accuracy: 88.2353%
+
+run #98
+True Positive: 17
+True Negative: 15
+False Positive: 0
+False Negative: 2
+Accuracy: 94.1176%
+
+run #99
+True Positive: 19
+True Negative: 14
+False Positive: 0
+False Negative: 1
+Accuracy: 97.0588%
+
+AVERAGE STATS
+Mean Accuracy: 96.2941 %
+
+Average confusion matrix
+True Positive: 15.97
+True Negative: 16.77
+False Positive: 0.38
+False Negative: 0.88

@@ -9,6 +9,8 @@ void calculateConfusionMatrix(std::vector<std::vector<int>> &data, ID3 &id3, int
 
 double calculateAccuracy(int confusionMatrix[2][2]);
 
+void calculateAttributesEntropy(unsigned int topN, std::set<int> &attributes, std::vector<std::vector<int>> &data);
+
 // randomly shuffling data and dividing into training and test data
 void divideData(int SEED, std::vector<std::vector<int>> &original_data, std::vector<std::vector<int>> &training_data, std::vector<std::vector<int>> &test_data);
 

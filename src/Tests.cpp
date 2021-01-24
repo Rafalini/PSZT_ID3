@@ -14,6 +14,23 @@ void calculateConfusionMatrix(std::vector<std::vector<int>> &data, ID3 &id3, int
     }
 }
 
+void calculateAttributesEntropy(unsigned int topN, std::set<int> &attributes, std::vector<std::vector<int>> &data) {
+    std::vector<std::pair<double, int>> attrib_entropy;
+
+    for (auto attrib : attributes) {
+        double entr = ID3::entropy_for_division(attrib, data);
+        attrib_entropy.push_back({entr, attrib});
+    }
+
+    sort(attrib_entropy.begin(), attrib_entropy.end());
+    
+    std::cout << topN << " smallest attribute entropy" << std::endl;
+    for (unsigned int i = 0; i < attrib_entropy.size() && i < topN; i++) {
+        std::cout << "Attrib" << attrib_entropy[i].second + 1 << ": " << attrib_entropy[i].first << std::endl;
+    }
+    std::cout << std::endl;
+}
+
 double calculateAccuracy(int confusionMatrix[2][2]) {
     int correctlyPredictedCases = confusionMatrix[0][0] + confusionMatrix[1][1];
     int allCases = confusionMatrix[0][0] + confusionMatrix[1][1] + confusionMatrix[1][0] + confusionMatrix[0][1];
@@ -38,6 +55,8 @@ void divideData(int SEED, std::vector<std::vector<int>> &original_data, std::vec
 void mean_stats(int runsNumber, std::set<int> &attributes, std::vector<std::vector<int>> &data) {
     double accuracySum = 0;
 
+    int confusionMatrixAvg[2][2]{{0}};
+
     int SEED = 989;
 
     for (int i = 0; i < runsNumber; i++) {
@@ -58,8 +77,17 @@ void mean_stats(int runsNumber, std::set<int> &attributes, std::vector<std::vect
         std::cout << "Accuracy: " << calculateAccuracy(confusionMatrix) << "%" << std::endl << std::endl;
 
         accuracySum += calculateAccuracy(confusionMatrix) ;
+        confusionMatrixAvg[0][0] += confusionMatrix[0][0];
+        confusionMatrixAvg[0][1] += confusionMatrix[0][1];
+        confusionMatrixAvg[1][0] += confusionMatrix[1][0];
+        confusionMatrixAvg[1][1] += confusionMatrix[1][1];
     }
 
     std::cout << "AVERAGE STATS" << std::endl;
-    std::cout << "Mean Accuracy: " << accuracySum / runsNumber << " %" << std::endl;
+    std::cout << "Mean Accuracy: " << accuracySum / runsNumber << " %" << std::endl << std::endl;
+    std::cout << "Average confusion matrix" << std::endl;
+    std::cout << "True Positive: " << (double) confusionMatrixAvg[1][1] / runsNumber << std::endl;
+    std::cout << "True Negative: " << (double) confusionMatrixAvg[0][0] / runsNumber << std::endl;
+    std::cout << "False Positive: " << (double) confusionMatrixAvg[1][0] / runsNumber << std::endl;
+    std::cout << "False Negative: " << (double) confusionMatrixAvg[0][1] / runsNumber << std::endl;
 }
